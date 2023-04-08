@@ -1,22 +1,9 @@
-name: Build, Test, and Deploy
-on:
-  push:
-    branches: [ main ]
+def hello():
+    print("hi")
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: mvn package
-    - name: Test
-      run: mvn test
-    - name: Deploy
-      uses: easingthemes/ssh-deploy@v2.2.15
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-        remote-user: <REMOTE_USER>
-        remote-host: <REMOTE_HOST>
-        remote-path: <REMOTE_PATH>
+
+def bye():
+    print("bye")
+
+
+print(hello())
