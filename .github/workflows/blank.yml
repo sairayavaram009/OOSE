@@ -1,9 +1,110 @@
-def hello():
-    print("hi")
+// ConsoleApplication20.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
+#include <iostream>
+#include <vector>
 
-def bye():
-    print("bye")
+using namespace std;
 
+class Client {
+private:
+    string name;
+    string email;
+    string phone;
+    vector<string> addresses;
+    vector<int> services;
+    vector<int> payments;
+    vector<int> pests;
+public:
+    Client(string n, string e, string p) : name(n), email(e), phone(p) {}
+    void addAddress(string a) {
+        addresses.push_back(a);
+    }
+    void addService(int s) {
+        services.push_back(s);
+    }
+    void addPayment(int p) {
+        payments.push_back(p);
+    }
+    void addPest(int p) {
+        pests.push_back(p);
+    }
+};
 
-print(hello())
+class Employee {
+private:
+    string name;
+    string email;
+    string phone;
+    vector<int> services;
+    vector<int> payments;
+    vector<int> pests;
+public:
+    Employee(string n, string e, string p) : name(n), email(e), phone(p) {}
+    void addService(int s) {
+        services.push_back(s);
+    }
+    void addPayment(int p) {
+        payments.push_back(p);
+    }
+    void addPest(int p) {
+        pests.push_back(p);
+    }
+};
+
+class Pest {
+private:
+    string type;
+    string description;
+public:
+    Pest(string t, string d) : type(t), description(d) {}
+};
+
+class Service {
+private:
+    string name;
+    string description;
+    float price;
+public:
+    Service(string n, string d, float p) : name(n), description(d), price(p) {}
+};
+
+class Payment {
+private:
+    string type;
+    float amount;
+public:
+    Payment(string t, float a) : type(t), amount(a) {}
+};
+
+int main() {
+    Client c1("John Doe", "johndoe@gmail.com", "555-1234");
+    c1.addAddress("123 Main St.");
+    c1.addService(1);
+    c1.addPayment(1);
+    c1.addPest(1);
+
+    Employee e1("Jane Smith", "janesmith@gmail.com", "555-5678");
+    e1.addService(1);
+    e1.addPayment(1);
+    e1.addPest(1);
+
+    Pest p1("Ants", "Small black ants commonly found in kitchens");
+
+    Service s1("Pest Control", "Get rid of pests", 100.0);
+
+    Payment pay1("Credit Card", 100.0);
+
+    return 0;
+}
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
